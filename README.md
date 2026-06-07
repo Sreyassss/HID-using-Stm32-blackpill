@@ -31,7 +31,7 @@ Here's the data flow from physical input to your PC:
 ---
 
 ##  CubeMX Settings
-
+![](WhatsApp%20Image%202026-06-07%20at%2022.11.52.jpeg)
 | Setting | Value |
 |---|---|
 | Debug | SWD |
@@ -44,13 +44,13 @@ Here's the data flow from physical input to your PC:
 ---
 
 ## Generate Your Custom HID Descriptor
-
+![](WhatsApp%20Image%202026-06-07%20at%2022.15.41.jpeg)
 The USB descriptor is a byte array that tells Windows what your device is — how many buttons, how many axes, what range the axes use, etc.
 
 Download [DT.exe](https://www.usb.org/document-library/hid-descriptor-tool) from the USB-IF website. It's a Windows app that lets you visually build a descriptor and export it as a C array. Useful if you want to understand exactly what each byte means.
 
 ---
-![](WhatsApp%20Image%202026-06-07%20at%2022.15.41.jpeg)
+
 ## Swap the Mouse Descriptor in usbd_hid.c
 
 CubeMX generates a mouse HID descriptor by default. You need to replace it with your gamepad one.
@@ -148,7 +148,7 @@ HAL_Delay(10); // send every 10ms
 ---
 
 ## Flash and Test
-
+![](WhatsApp%20Image%202026-06-07%20at%2022.11.52%20(1).jpeg)
 1. Flash the firmware and plug in the board over USB.
 2. Press **Win + R**, type `joy.cpl`, hit Enter.
 3. Your device should appear. Click **Properties** to see the axes and buttons respond in real time.
