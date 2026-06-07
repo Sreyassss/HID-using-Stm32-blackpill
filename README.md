@@ -1,5 +1,5 @@
 # STM32 USB HID Gamepad
-![](WhatsApp%20Image%202026-06-07%20at%2022.29.35.jpeg)
+
 A gamepad built on the **STM32F401CCU6 (Black Pill)**. Plug it in and Windows picks it up as a gamepad instantly — no drivers to install, no software needed.
 
 ---
