@@ -1,5 +1,5 @@
 # STM32 USB HID Gamepad
-
+![](WhatsApp%20Image%202026-06-07%20at%2022.29.35.jpeg)
 A gamepad built on the **STM32F401CCU6 (Black Pill)**. Plug it in and Windows picks it up as a gamepad instantly — no drivers to install, no software needed.
 
 ---
@@ -50,7 +50,7 @@ The USB descriptor is a byte array that tells Windows what your device is — ho
 Download [DT.exe](https://www.usb.org/document-library/hid-descriptor-tool) from the USB-IF website. It's a Windows app that lets you visually build a descriptor and export it as a C array. Useful if you want to understand exactly what each byte means.
 
 ---
-
+![](WhatsApp%20Image%202026-06-07%20at%2022.15.41.jpeg)
 ## Swap the Mouse Descriptor in usbd_hid.c
 
 CubeMX generates a mouse HID descriptor by default. You need to replace it with your gamepad one.
