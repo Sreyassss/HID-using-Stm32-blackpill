@@ -17,7 +17,7 @@ I built this by editing a generated mouse report descriptor and modifying it for
 ### 1. Data Collection (ADC + DMA)
 This was my first time really playing with the ADC channels for this kind of application. I used a hardware timer to cut down the sampling rate and DMA (Direct Memory Access) to store the data. 
 
-**Why DMA?** If your controller does not provide data the exact moment Windows asks for it, Windows will immediately label the device as "malfunctioned" and disconnect it. Our device must *always* be ready to provide data. DMA combined with interrupts ensures we never miss a beat.
+If your controller does not provide data the exact moment Windows asks for it, Windows will immediately label the device as "malfunctioned" and disconnect it. Our device must *always* be ready to provide data. DMA combined with interrupts ensures we never miss a beat.
 
 ### 2. The USB HID Descriptor
 Before sending anything over USB, we first take the data from the thumbsticks and buttons and verify them via a debug menu. Then, we construct the USB HID descriptor (located in `usb_hid.c`). 
