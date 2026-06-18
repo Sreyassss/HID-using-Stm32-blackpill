@@ -1,4 +1,6 @@
 # STM32 Black Pill USB HID Gamepad
+<img src="PROTOTYPE.jpeg" alt="Prototype Front" width="400">  <img src="PROTOTYPE%20BACK.jpeg" alt="Prototype Front" width="400">
+
 
 This repository contains the firmware and outline for a custom USB HID device that functions as a gamepad/joystick. 
 
@@ -54,3 +56,9 @@ To verify the controller is working, press `Win + R` and type `joy.cpl`. This op
 Right now, this controller works perfectly for emulators and older games (which use DirectInput). 
 
 However, most modern PC games look exclusively for an Xbox Controller descriptor (XInput). Frankly, it is not worth the hassle to code an XInput descriptor manually from scratch. There are many existing GitHub repositories that provide XInput firmware which can be flashed directly to the board if you need modern game support.
+
+
+HID TOOL; https://www.usb.org/document-library/hid-descriptor-tool
+
+
+USB TOOL; https://www.uwe-sieber.de/usbtreeview_e.html
