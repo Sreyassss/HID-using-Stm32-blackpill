@@ -22,8 +22,12 @@ Before sending anything over USB, we first take the data from the thumbsticks an
 
 **This is the step where your board is most likely to fail.**
 The report descriptor has a very specific and strict way of being written. You can refer to online sources, but I highly recommend using the **HID Descriptor Tool** (free) to look into the byte information. 
+![HID Descriptor Tool](hid%20tool.png)
+![USB Report](report.png)
 
 Once you write your report, make sure to count the exact number of bits/bytes in them and update the report size in `usb_hid.h`.
+
+`#define HID_MOUSE_REPORT_DESC_SIZE                 49U`
 
 ### 3. Structuring and Padding Data
 After the descriptor is done, we have to package our data into a single `struct` file. 
@@ -39,9 +43,12 @@ After constructing the struct, we use a send report function to shoot the data o
 ## 🐛 Debugging & Testing
 Because Windows fails silently, I used another free USB analyzer tool. This tool tells you the actual state of the USB connection. If the device is failing to be detected, it will create an error dump which you can view to debug the issue. 
 * *Example:* If you give the wrong report description size in `usb_hid.h`, this tool will catch it and generate an error dump.
+![USB Debugging Tool](usb%20debug%20tool.png)
 
 **Final Testing:**
 To verify the controller is working, press `Win + R` and type `joy.cpl`. This opens the native Windows Gamepad checker so you can see if all axes and buttons are tracking properly.
+
+![Joy.cpl Gamepad Checker](jotcpl.png)
 
 ## ⚠️ Limitations & The Xbox Controller Issue
 Right now, this controller works perfectly for emulators and older games (which use DirectInput). 
